@@ -63,7 +63,7 @@ func numb(x int) {
 	}
 }
 
-func strLength(str string, length int) int {
+func strLength(str string, length int) int { //
 	length = utf8.RuneCountInString(str)
 	return length
 }
