@@ -1,0 +1,29 @@
+1) фикс для ошибок с dlv:
+
+заменить файл launch.json на следующий:
+
+{
+    "name": "CloudCredOperator",
+    "type": "go",
+    //"debugAdapter": "legacy",
+    "request": "launch",
+    "mode": "auto",
+    "remotePath": "",
+    "port": 12345,
+    "host": "127.0.0.1",
+    "program": "${env:HOME}/projects/cloud-credential-operator/src/github.com/openshift/cloud-credential-operator/cmd/cloud-credential-operator/main.go",
+    "env": {
+        "KUBECONFIG": "/home/jdiaz/.kube/aws.kubeconfig",
+        "CCO_SKIP_LEADER_ELECTION": "yes",
+        "RELEASE_VERSION": "NEWTESTVER"
+    },
+    "args": [
+        "operator"//,
+        //"--log-level=debug"
+    ],
+    "showLog": true
+}
+
+
+
+2) ошибки с каналами: хз, работает непредсказуемо. сначала дебагинг через f5, затем через go run _______ (все названия исполняемых файлов)
