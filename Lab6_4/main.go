@@ -22,12 +22,12 @@ func main() {
 }
 
 func increment(number int, ch chan bool, mutex *s.Mutex) {
-	mutex.Lock()
+	//mutex.Lock()
 	for k := 1; k <= 10; k++ {
 		counter++
 		f.Println("Goroutine ", number, "-", counter)
 	}
 
-	mutex.Unlock()
+	//mutex.Unlock()
 	ch <- true
 }
