@@ -1,0 +1,5 @@
+гет:
+    curl http://localhost:8080/hello
+
+пост:
+    curl -X POST -H "Content-Type: application/json" -d "{\"message\": \"Hello, server!\"}" http://localhost:8080/data
