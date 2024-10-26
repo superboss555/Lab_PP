@@ -1,0 +1,18 @@
+1. получить список пользователей(гет): curl -X GET http://localhost:8080/users
+2. получить пользователя по id(гет): curl -X GET http://localhost:8080/users/1 (последняя цифра - id)
+3. добавить пользователя(пост): 
+    curl -X POST http://localhost:8080/users -d "{\"name\": \"Alice johns\", \"email\": \"aliceJohns@example.com\"}" -H "Content-Type: application/json"
+    curl -X POST http://localhost:8080/users -d "{\"name\": \"Saimon\", \"email\": \"S@example.com\"}" -H "Content-Type: application/json"
+    curl -X POST http://localhost:8080/users -d "{\"name\": \"Charlie Stone\", \"email\": \"StoNe@example.com\"}" -H "Content-Type: application/json"
+4. обновить инфу о пользователе (пут):  curl -X PUT http://localhost:8080/users/1 -d "{\"name\": \"Name Updated\", \"email\": \"name_updated@example.com\"}" -H "Content-Type: application/json"
+5. удалить пользователя(делете): curl -X DELETE http://localhost:8080/users/1
+
+
+6. создать пользователя с ошибкой (для 3 задания): curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d "{\"email\": \"test@example.com\"}"
+
+
+7. получение всех пользователей с пагинацией(4 задание): curl -X GET "http://localhost:8080/users?page=1&limit=3" (3 пользователя)
+8. фильтрация пользователей по имени: curl -X GET "http://localhost:8080/users?name=Test" (имя = тест)
+
+
+9. очистить бд в пгАдмин: TRUNCATE TABLE users RESTART IDENTITY CASCADE;
